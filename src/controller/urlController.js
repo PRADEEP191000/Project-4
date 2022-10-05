@@ -13,10 +13,11 @@ const { isValid, isVAlidRequestBody, urlRegex, baseUrlRegex } = require('../vali
 const redisClient = redis.createClient(
     13123,
     "redis-13123.c301.ap-south-1-1.ec2.cloud.redislabs.com",
+
     { no_ready_check: true }
 );
 redisClient.auth("rq5x8BDeuGaerKjxUQakKG4BrpzfXh63", function (err) {
-    if (err) throw err;
+    if (err) throw(err);
 });
 
 redisClient.on("connect", async function () {
